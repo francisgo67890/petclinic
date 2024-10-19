@@ -3,14 +3,16 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: petclinic-mem-hpa
 spec:
-  maxReplicas: 5
-  minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: petclinic-deployment
+    name: petclinic
+  minReplicas: 1
+  maxReplicas: 10
   metrics:
   - type: Resource
     resource:
       name: memory
-      targetAverageUtilization: 50
+      target:
+        type: Utilization # Définir le type de cible comme Utilization
+        averageUtilization: 80 # Spécifier la cible en pourcentage d'utilisation
