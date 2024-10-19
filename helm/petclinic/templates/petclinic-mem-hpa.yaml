@@ -14,5 +14,4 @@ spec:
     resource:
       name: memory
       target:
-        type: Utilization # Définir le type de cible comme Utilization
-        averageUtilization: 80 # Spécifier la cible en pourcentage d'utilisation
+        averageUtilization: 80  # Spécifier la cible en pourcentage d'utilisation
